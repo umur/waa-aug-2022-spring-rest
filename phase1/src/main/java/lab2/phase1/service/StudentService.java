@@ -18,6 +18,26 @@ public class StudentService implements IStudentService {
     }
 
     @Override
+    public Boolean create(Student stu) {
+        return repo.create(stu);
+    }
+
+    @Override
+    public List<Student> read() {
+        return repo.read();
+    }
+
+    @Override
+    public Boolean update(int id, Student stu) {
+        return repo.update(id, stu);
+    }
+
+    @Override
+    public Boolean delete(int id) {
+        return repo.delete(id);
+    }
+
+    @Override
     public List<Student> getStudentsByMajor(String major) {
         return repo.getStudentsByMajor(major);
     }

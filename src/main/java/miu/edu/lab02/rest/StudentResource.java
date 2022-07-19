@@ -42,13 +42,13 @@ public class StudentResource {
         studentService.delete(id);
     }
 
-    @PutMapping("add-course/{id}/{code}")
-    public void addCourse(@PathVariable Integer id,@PathVariable String code) {
+    @PostMapping("courses/{id}/{code}")
+    public void addCourse(@PathVariable Integer id, @PathVariable String code) {
         studentService.addCourse(id, code);
     }
 
-    @GetMapping("remove-course/{id}/{code}")
-    public void removeCourse(@PathVariable Integer id,@PathVariable String code) {
+    @DeleteMapping("courses/{id}/{code}")
+    public void removeCourse(@PathVariable Integer id, @PathVariable String code) {
         studentService.removeCourse(id, code);
     }
     @GetMapping("filter-by-major")

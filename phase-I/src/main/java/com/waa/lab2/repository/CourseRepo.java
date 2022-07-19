@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 @Repository
 public class CourseRepo {
-    private static List<Course> courses = new ArrayList<>();
+    static List<Course> courses = new ArrayList<>();
 
     {
         // Init sample data
@@ -53,6 +53,15 @@ public class CourseRepo {
                     c.setName(course.getName());
                     c.setCode(course.getCode());
                 });
+    }
+
+    public List<Course> getCoursesByStudentId(Long studentId) {
+        return StudentRepo.students
+                    .stream()
+                    .filter(c -> !c.isDeleted())
+                    .filter(c -> c.getId().equals(studentId))
+                    .flatMap( c -> c.getCoursesTaken().stream())
+                    .collect(Collectors.toList());
     }
 
 }

@@ -2,6 +2,7 @@ package com.waa.lab2.service.impl;
 
 import com.waa.lab2.entity.Course;
 import com.waa.lab2.repository.CourseRepo;
+import com.waa.lab2.repository.StudentRepo;
 import com.waa.lab2.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import java.util.Optional;
 public class CourseServiceImpl implements CourseService {
 
     private final CourseRepo repo;
+    private final StudentRepo studentRepo;
 
     @Override
     public List<Course> findAll() {
@@ -31,12 +33,17 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         repo.deleteById(id);
     }
 
     @Override
-    public Optional<Course> findById(long id) {
+    public Optional<Course> findById(Long id) {
         return repo.findById(id);
+    }
+
+    @Override
+    public List<Course> getByStudentId(Long studentId) {
+        return repo.getCoursesByStudentId(studentId);
     }
 }

@@ -1,9 +1,11 @@
 package com.waa.lab2.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Data
 public class Student {
     Long id;
@@ -13,5 +15,5 @@ public class Student {
     String major;
     List<Course> coursesTaken;
 
-    Boolean deleted;
+    boolean deleted;
 }

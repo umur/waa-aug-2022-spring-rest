@@ -39,4 +39,9 @@ public class CourseController {
     Optional<Course> findById(@PathVariable Long id){
         return courseService.findById(id);
     }
+
+    @GetMapping("/getByStudentId")
+    List<Course> getCoursesByStudentId(@RequestParam Long studentId){
+        return courseService.getByStudentId(studentId);
+    }
 }

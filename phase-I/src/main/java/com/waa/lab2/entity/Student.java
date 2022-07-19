@@ -13,6 +13,7 @@ public class Student {
     String lastName;
     String email;
     String major;
+    Double gpa;
     List<Course> coursesTaken;
 
     boolean deleted;

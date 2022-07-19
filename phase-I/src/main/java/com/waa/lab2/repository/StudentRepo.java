@@ -15,9 +15,9 @@ public class StudentRepo {
     {
         // Init sample data
         students.add(new Student(1L, "John", "Nathan",
-                "jonh.nathan@gmail.com", "CS", Arrays.asList(CourseRepo.courses.get(0)), false));
+                "jonh.nathan@gmail.com", "CS", 3.5, Arrays.asList(CourseRepo.courses.get(0)), false));
         students.add(new Student(2L, "Jack", "Dallas",
-                "jack.Dallas@gmail.com", "Math", Arrays.asList(CourseRepo.courses.get(1)), false));
+                "jack.Dallas@gmail.com", "Math", 4.0, Arrays.asList(CourseRepo.courses.get(1)), false));
     }
 
     public List<Student> findAll() {

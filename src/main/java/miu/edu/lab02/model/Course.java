@@ -17,5 +17,6 @@ public class Course {
     private Integer id;
 
     String name;
+    @Column(unique=true)
     String code;
 }

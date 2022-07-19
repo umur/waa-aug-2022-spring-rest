@@ -28,7 +28,11 @@ public class StudentServiceImpl implements StudentService {
     public Student update(Integer id, Student student) {
         Optional<Student> updating = repository.findById(id);
         if (updating.isPresent()) {
-
+            updating.get().setFirstName(student.getFirstName());
+            updating.get().setLastName(student.getLastName());
+            updating.get().setEmail(student.getEmail());
+            updating.get().setMajor(student.getMajor());
+            updating.get().setGpa(student.getGpa());
             return repository.save(updating.get());
         }
         throw new NoSuchElementException("Not found");

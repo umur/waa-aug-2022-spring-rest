@@ -24,7 +24,8 @@ public class CourseServiceImpl implements CourseService {
     public Course update(Integer id, Course course) {
         Optional<Course> updating = repository.findById(id);
         if (updating.isPresent()) {
-           
+            updating.get().setName(course.getName());
+            updating.get().setCode(course.getCode());
             return repository.save(updating.get());
         }
         throw new NoSuchElementException("Not found");

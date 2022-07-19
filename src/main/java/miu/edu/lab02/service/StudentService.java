@@ -4,6 +4,7 @@ import miu.edu.lab02.model.Course;
 import miu.edu.lab02.model.Student;
 
 import java.util.List;
+import java.util.Optional;
 
 interface StudentService {
     List<Student> findAll();
@@ -12,13 +13,13 @@ interface StudentService {
 
     Student update(Integer id, Student student);
 
-    Student findOne(Integer id);
+    Optional<Student> findOne(Integer id);
 
     void delete(Integer id);
 
-    void addCourse(Integer studentId, String courseCode);
+    Student addCourse(Integer studentId, String courseCode);
 
-    void removeCourse(Integer studentId, String courseCode);
+    Student removeCourse(Integer studentId, String courseCode);
 
     List<Student> getStudentsByMajor(String major);
 

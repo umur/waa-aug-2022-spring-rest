@@ -7,6 +7,8 @@ import miu.edu.lab02.repository.CourseRepository;
 import miu.edu.lab02.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -26,49 +28,38 @@ public class StudentServiceImpl implements StudentService {
     }
 
     public Student update(Integer id, Student student) {
-        Optional<Student> updating = repository.findById(id);
-        if (updating.isPresent()) {
-            updating.get().setFirstName(student.getFirstName());
-            updating.get().setLastName(student.getLastName());
-            updating.get().setEmail(student.getEmail());
-            updating.get().setMajor(student.getMajor());
-            updating.get().setGpa(student.getGpa());
-            return repository.save(updating.get());
-        }
-        throw new NoSuchElementException("Not found");
+        student.setId(id);
+        return repository.save(student);
     }
 
-    public Student findOne(Integer id) {
-        Optional<Student> found = repository.findById(id);
-        if (found.isPresent())
-            return found.get();
-        throw new NoSuchElementException("Not found");
+    public Optional<Student> findOne(Integer id) {
+        return repository.findById(id);
     }
 
     public void delete(Integer id) {
         repository.deleteById(id);
     }
 
-    public void addCourse(Integer studentId, String courseCode) {
+    public Student addCourse(Integer studentId, String courseCode) {
         Optional<Student> adding = repository.findById(studentId);
-        adding.ifPresent(student -> {
+        return adding.map(student -> {
             Optional<Course> course = courseRepository.findByCode(courseCode);
-            course.ifPresent(c -> {
+            return course.map(c -> {
                 student.addCourse(c);
-                repository.save(student);
-            });
-        });
+                return repository.save(student);
+            }).orElseGet(() -> null);
+        }).orElseGet(() -> null);
     }
 
-    public void removeCourse(Integer studentId, String courseCode) {
+    public Student removeCourse(Integer studentId, String courseCode) {
         Optional<Student> removing = repository.findById(studentId);
-        removing.ifPresent(student -> {
+        return removing.map(student -> {
             Optional<Course> course = courseRepository.findByCode(courseCode);
-            course.ifPresent(c -> {
+            return course.map(c -> {
                 student.removeCourse(c);
-                repository.save(student);
-            });
-        });
+                return repository.save(student);
+            }).orElseGet(() -> null);
+        }).orElseGet(() -> null);
     }
 
     public List<Student> getStudentsByMajor(String major) {
@@ -76,7 +67,10 @@ public class StudentServiceImpl implements StudentService {
     }
 
     public List<Course> getCoursesByStudentId(Integer id) {
-        return this.findOne(id).getCoursesTaken();
+        Optional<Student> found = this.findOne(id);
+        if (found.isPresent())
+            return found.get().getCoursesTaken();
+        return new ArrayList<>();
     }
 
 }

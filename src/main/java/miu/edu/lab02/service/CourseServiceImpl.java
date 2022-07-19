@@ -5,6 +5,7 @@ import miu.edu.lab02.model.Course;
 import miu.edu.lab02.repository.CourseRepository;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -22,20 +23,12 @@ public class CourseServiceImpl implements CourseService {
     }
 
     public Course update(Integer id, Course course) {
-        Optional<Course> updating = repository.findById(id);
-        if (updating.isPresent()) {
-            updating.get().setName(course.getName());
-            updating.get().setCode(course.getCode());
-            return repository.save(updating.get());
-        }
-        throw new NoSuchElementException("Not found");
+        course.setId(id);
+        return repository.save(course);
     }
 
-    public Course findOne(Integer id) {
-        Optional<Course> found = repository.findById(id);
-        if (found.isPresent())
-            return found.get();
-        throw new NoSuchElementException("Not found");
+    public Optional<Course> findOne(Integer id) {
+        return repository.findById(id);
     }
 
     public void delete(Integer id) {

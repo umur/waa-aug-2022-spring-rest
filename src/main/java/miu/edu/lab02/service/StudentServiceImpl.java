@@ -7,10 +7,8 @@ import miu.edu.lab02.repository.CourseRepository;
 import miu.edu.lab02.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service

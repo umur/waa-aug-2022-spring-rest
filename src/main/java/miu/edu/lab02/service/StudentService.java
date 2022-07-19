@@ -16,6 +16,9 @@ interface StudentService {
 
     void delete(Integer id);
 
+    void addCourse(Integer studentId, String courseCode);
+
+    void removeCourse(Integer studentId, String courseCode);
 
     List<Student> getStudentsByMajor(String major);
 

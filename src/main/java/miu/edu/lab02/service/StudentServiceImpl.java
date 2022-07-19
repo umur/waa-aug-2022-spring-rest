@@ -3,6 +3,7 @@ package miu.edu.lab02.service;
 import lombok.RequiredArgsConstructor;
 import miu.edu.lab02.model.Course;
 import miu.edu.lab02.model.Student;
+import miu.edu.lab02.repository.CourseRepository;
 import miu.edu.lab02.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,8 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class StudentServiceImpl implements StudentService {
     private final StudentRepository repository;
+    private final CourseRepository courseRepository;
+
     public List<Student> findAll() {
         return repository.findAll();
     }
@@ -40,6 +43,28 @@ public class StudentServiceImpl implements StudentService {
 
     public void delete(Integer id) {
         repository.deleteById(id);
+    }
+
+    public void addCourse(Integer studentId, String courseCode) {
+        Optional<Student> adding = repository.findById(studentId);
+        adding.ifPresent(student -> {
+            Optional<Course> course = courseRepository.findByCode(courseCode);
+            course.ifPresent(c -> {
+                student.addCourse(c);
+                repository.save(student);
+            });
+        });
+    }
+
+    public void removeCourse(Integer studentId, String courseCode) {
+        Optional<Student> removing = repository.findById(studentId);
+        removing.ifPresent(student -> {
+            Optional<Course> course = courseRepository.findByCode(courseCode);
+            course.ifPresent(c -> {
+                student.removeCourse(c);
+                repository.save(student);
+            });
+        });
     }
 
     public List<Student> getStudentsByMajor(String major) {

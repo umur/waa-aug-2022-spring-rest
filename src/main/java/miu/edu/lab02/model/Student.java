@@ -25,4 +25,12 @@ public class Student {
     @OneToMany
     List<Course> coursesTaken;
     Double gpa;
+
+    public void addCourse(Course course) {
+        this.coursesTaken.add(course);
+    }
+
+    public void removeCourse(Course course) {
+        this.coursesTaken.remove(course);
+    }
 }

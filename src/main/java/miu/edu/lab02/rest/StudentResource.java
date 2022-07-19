@@ -41,6 +41,15 @@ public class StudentResource {
         studentService.delete(id);
     }
 
+    @PutMapping("add-course/{id}/{code}")
+    public void addCourse(@PathVariable Integer id,@PathVariable String code) {
+        studentService.addCourse(id, code);
+    }
+
+    @GetMapping("remove-course/{id}/{code}")
+    public void removeCourse(@PathVariable Integer id,@PathVariable String code) {
+        studentService.removeCourse(id, code);
+    }
     @GetMapping("filter-by-major/{major}")
     public void filterByMajor(@PathVariable String major) {
         studentService.getStudentsByMajor(major);

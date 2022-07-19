@@ -5,7 +5,10 @@ import miu.edu.lab02.model.Course;
 import miu.edu.lab02.model.Student;
 import miu.edu.lab02.repository.CourseRepository;
 import miu.edu.lab02.repository.StudentRepository;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,8 +46,13 @@ public class StudentServiceImpl implements StudentService {
         return adding.map(student -> {
             Optional<Course> course = courseRepository.findByCode(courseCode);
             return course.map(c -> {
-                student.addCourse(c);
-                return repository.save(student);
+                try {
+                    student.addCourse(c);
+                    return repository.save(student);
+                } catch (DataIntegrityViolationException e) {
+                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Already existed");
+                }
+
             }).orElseGet(() -> null);
         }).orElseGet(() -> null);
     }

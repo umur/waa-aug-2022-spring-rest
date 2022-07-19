@@ -24,7 +24,7 @@ public class CourseRepo {
     public List<Course> findAll(){
         return courseList
                 .stream()
-                .filter(Course::isDeleted)
+                .filter(course -> !course.isDeleted())
                 .collect(Collectors.toList());
     }
 

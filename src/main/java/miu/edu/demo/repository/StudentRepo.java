@@ -1,12 +1,10 @@
 package miu.edu.demo.repository;
 
+import miu.edu.demo.entity.Course;
 import miu.edu.demo.entity.Student;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -21,7 +19,7 @@ public class StudentRepo {
     public List<Student> findAll(){
         return studentList
                 .stream()
-                .filter(Student::isDeleted)
+                .filter(student -> !student.isDeleted())
                 .collect(Collectors.toList());
     }
 
@@ -45,5 +43,12 @@ public class StudentRepo {
                 .stream()
                 .filter(predicate)
                 .collect(Collectors.toList());
+    }
+
+    public Student addCourse(int studentId, Course course){
+        Student student = findById(studentId)
+                .orElseThrow(() -> new NoSuchElementException("No such student with id: " + studentId));
+        student.getCoursesTaken().add(course);
+        return student;
     }
 }

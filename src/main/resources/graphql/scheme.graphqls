@@ -1,0 +1,12 @@
+type Query {
+    todoById(id: ID): Todo
+}
+
+type Todo {
+    id: Int
+    title: String
+    desc: String
+    assignedTo: String
+    createdDate: String
+    updatedDate: String
+}

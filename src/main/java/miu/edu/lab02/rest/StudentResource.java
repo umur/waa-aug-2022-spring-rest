@@ -1,6 +1,7 @@
 package miu.edu.lab02.rest;
 
 import lombok.RequiredArgsConstructor;
+import miu.edu.lab02.model.Course;
 import miu.edu.lab02.model.Student;
 import miu.edu.lab02.service.StudentServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -50,13 +51,13 @@ public class StudentResource {
     public void removeCourse(@PathVariable Integer id,@PathVariable String code) {
         studentService.removeCourse(id, code);
     }
-    @GetMapping("filter-by-major/{major}")
-    public void filterByMajor(@PathVariable String major) {
-        studentService.getStudentsByMajor(major);
+    @GetMapping("filter-by-major")
+    public List<Student> filterByMajor(@RequestParam String major) {
+        return studentService.getStudentsByMajor(major);
     }
 
     @GetMapping("courses/{id}")
-    public void filterByMajor(@PathVariable Integer id) {
-        studentService.getCoursesByStudentId(id);
+    public List<Course> filterByMajor(@PathVariable Integer id) {
+        return studentService.getCoursesByStudentId(id);
     }
 }

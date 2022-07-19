@@ -51,7 +51,7 @@ public class StudentResource {
     public void removeCourse(@PathVariable Integer id, @PathVariable String code) {
         studentService.removeCourse(id, code);
     }
-    @GetMapping("filter-by-major")
+    @GetMapping("by-major")
     public List<Student> filterByMajor(@RequestParam String major) {
         return studentService.getStudentsByMajor(major);
     }

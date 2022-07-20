@@ -18,6 +18,26 @@ public class StudentController {
         this.serv = serv;
     }
 
+    @PostMapping
+    Boolean create(Student stu){
+        return serv.create(stu);
+    }
+
+    @GetMapping
+    List<Student> read(){
+        return serv.read();
+    }
+
+    @PutMapping
+    Boolean update(int id, Student stu){
+        return serv.update(id, stu);
+    }
+
+    @DeleteMapping
+    Boolean delete(int id){
+        return serv.delete(id);
+    }
+
     @GetMapping("/getCoursesByStudentId/{studentId}")
     @ResponseStatus(HttpStatus.OK)
     public List<Course> getCoursesByStudentId(@PathVariable int studentId) {

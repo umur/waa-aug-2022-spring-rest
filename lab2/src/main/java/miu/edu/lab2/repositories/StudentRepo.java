@@ -16,8 +16,8 @@ public class StudentRepo {
     public static void main(String[] args) {
         var courseList = new ArrayList<Course>();
         courseList.addAll(CourseRepo.courses);
-        stduList.add(new Student(1, "Tom", "Hanks", "hanks@gmail.com", "CS", courseList));
-        stduList.add(new Student(2, "Matt", "Damon", "damon@gmail.com", "MA", courseList));
+        stduList.add(new Student(1, "Tom", "Hanks", "hanks@gmail.com", "CS", 3.6F, courseList));
+        stduList.add(new Student(2, "Matt", "Damon", "damon@gmail.com", "MA", 3.7F ,courseList));
 
     }
 

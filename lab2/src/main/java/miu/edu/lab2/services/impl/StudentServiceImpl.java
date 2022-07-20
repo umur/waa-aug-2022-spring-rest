@@ -1,6 +1,7 @@
 package miu.edu.lab2.services.impl;
 
 import miu.edu.lab2.dtos.CourseDto;
+import miu.edu.lab2.dtos.MinimalStudentDto;
 import miu.edu.lab2.dtos.StudentDto;
 import miu.edu.lab2.models.Course;
 import miu.edu.lab2.models.Student;
@@ -41,9 +42,9 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<StudentDto> getStudentByMajor(String major) {
+    public List<MinimalStudentDto> getStudentByMajor(String major) {
         var students = studentRepo.getStudentByMajor(major);
-        return  students.stream().map(student -> modelMapper.map(student, StudentDto.class)).collect(Collectors.toList());
+        return  students.stream().map(student -> modelMapper.map(student, MinimalStudentDto.class)).collect(Collectors.toList());
     }
 
     @Override

@@ -1,6 +1,7 @@
 package miu.edu.lab2.controllers;
 
 import miu.edu.lab2.dtos.CourseDto;
+import miu.edu.lab2.dtos.MinimalStudentDto;
 import miu.edu.lab2.dtos.StudentDto;
 import miu.edu.lab2.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class StudentContrtoller {
     }
 
     @GetMapping("/byMajor")
-    public List<StudentDto> getAllStudentsByMajor(@RequestParam String major){
+    public List<MinimalStudentDto> getAllStudentsByMajor(@RequestParam String major){
         return studentService.getStudentByMajor(major);
     }
 
@@ -34,13 +35,13 @@ public class StudentContrtoller {
     }
 
     @PostMapping
-    public ResponseEntity saveBook(@RequestBody StudentDto studentDto){
+    public ResponseEntity saveStudent(@RequestBody StudentDto studentDto){
         studentService.save(studentDto);
         return new ResponseEntity("Student saved successfully", HttpStatus.CREATED);
     }
 
     @DeleteMapping
-    public ResponseEntity deleteBook(@RequestBody StudentDto studentDto){
+    public ResponseEntity deleteStudent(@RequestBody StudentDto studentDto){
         studentService.delete(studentDto);
         return new ResponseEntity("Student deleted successfully", HttpStatus.OK);
     }

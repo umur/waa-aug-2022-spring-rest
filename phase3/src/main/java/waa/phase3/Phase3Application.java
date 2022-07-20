@@ -11,8 +11,5 @@ public class Phase3Application {
         SpringApplication.run(Phase3Application.class, args);
     }
 
-    @Bean
-    ModelMapper getModelMapper() {
-        return new ModelMapper();
-    }
+
 }

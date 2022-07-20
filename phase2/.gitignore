@@ -1,9 +1,9 @@
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
-!phase1/.mvn/wrapper/maven-wrapper.jar
-!phase2/.mvn/wrapper/maven-wrapper.jar
-!phase3/.mvn/wrapper/maven-wrapper.jar
+!/phase1/.mvn/wrapper/maven-wrapper.jar
+!/phase2/.mvn/wrapper/maven-wrapper.jar
+!/phase3/.mvn/wrapper/maven-wrapper.jar
 
 !**/src/main/**/target/
 !**/src/test/**/target/

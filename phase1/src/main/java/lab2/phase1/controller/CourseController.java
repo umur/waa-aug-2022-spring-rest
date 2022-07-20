@@ -13,28 +13,27 @@ public class CourseController {
     private final CourseService serv;
 
     @Autowired
-    public CourseController(CourseService serv)
-    {
+    public CourseController(CourseService serv) {
         this.serv = serv;
     }
 
     @PostMapping
-    Boolean create(Course stu){
+    Boolean create(@RequestBody Course stu) {
         return serv.create(stu);
     }
 
     @GetMapping
-    List<Course> read(){
+    List<Course> read() {
         return serv.read();
     }
 
-    @PutMapping
-    Boolean update(int id, Course stu){
+    @PutMapping("/{id}")
+    Boolean update(@PathVariable int id, @RequestBody Course stu) {
         return serv.update(id, stu);
     }
 
-    @DeleteMapping
-    Boolean delete(int id){
+    @DeleteMapping("/{id}")
+    Boolean delete(@PathVariable int id) {
         return serv.delete(id);
     }
 }

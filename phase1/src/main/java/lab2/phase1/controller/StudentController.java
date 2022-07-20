@@ -13,28 +13,27 @@ import java.util.List;
 public class StudentController {
     private final IStudentService serv;
 
-    public StudentController(IStudentService serv)
-    {
+    public StudentController(IStudentService serv) {
         this.serv = serv;
     }
 
     @PostMapping
-    Boolean create(Student stu){
+    Boolean create(@RequestBody Student stu) {
         return serv.create(stu);
     }
 
     @GetMapping
-    List<Student> read(){
+    List<Student> read() {
         return serv.read();
     }
 
-    @PutMapping
-    Boolean update(int id, Student stu){
+    @PutMapping("/{id}")
+    Boolean update(@PathVariable int id, @RequestBody Student stu) {
         return serv.update(id, stu);
     }
 
-    @DeleteMapping
-    Boolean delete(int id){
+    @DeleteMapping("/{id}")
+    Boolean delete(@PathVariable int id) {
         return serv.delete(id);
     }
 

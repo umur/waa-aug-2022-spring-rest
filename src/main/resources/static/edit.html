@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Application</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="functions.js"></script>
+</head>
+<body>
+    <div class="form-wrapper">
+        <h2>Student</h2>
+        <input hidden placeholder="Firstname" id="id" />
+        <div class="form-item">
+            <label>Firstname</label>
+            <input required placeholder="Firstname" id="firstName" />
+        </div>
+        <div class="form-item">
+            <label>Lastname</label>
+            <input required placeholder="Lastname" id="lastName" />
+        </div>
+        <div class="form-item">
+            <label>Email</label>
+            <input required placeholder="Email" id="email" />
+        </div>
+        <div class="form-item">
+            <label>Major</label>
+            <input required placeholder="Major" id="major" />
+        </div>
+        <div class="form-item">
+            <label>GPA</label>
+            <input required type="number" placeholder="GPA" id="gpa" />
+        </div>
+        <div>
+            <button onclick="update()">Save</button>
+        </div>
+    </div>
+</body>
+</html>

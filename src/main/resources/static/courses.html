@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Application</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="students.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h3>Courses that the student has taken</h3>
+        <div class="display-inline">
+            <button onclick="onAddCourse()">Add Course</button>
+        </div>
+    </div>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="courses"></tbody>
+        </table>
+    </div>
+    <div class="dialog" id="selector">
+        <div class="form-item">
+            <label>Select course</label>
+            <select id="allCourses">
+                <option value="null">Choose one</option>
+            </select>
+
+        </div>
+        <div>
+            <button onclick="onCancel()">Cancel</button>
+            <button onclick="onAddToStudent()">Add</button>
+        </div>
+    </div>
+</body>
+</html>

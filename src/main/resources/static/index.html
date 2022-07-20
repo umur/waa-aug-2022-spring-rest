@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Application</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="logic.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h3>Students</h3>
+        <button onclick="onAdd()">Add Student</button>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                    <th>Major</th>
+                    <th>GPA</th>
+                    <th>Course count</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="students"></tbody>
+        </table>
+    </div>
+
+    <div class="header">
+        <h3>Courses</h3>
+        <button onclick="onAddCourse()">Add Course</button>
+    </div>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="courses"></tbody>
+        </table>
+    </div>
+</body>
+</html>

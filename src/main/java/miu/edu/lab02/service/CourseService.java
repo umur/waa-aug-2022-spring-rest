@@ -1,18 +1,18 @@
 package miu.edu.lab02.service;
 
-import miu.edu.lab02.model.Course;
+import miu.edu.lab02.dto.CourseDTO;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface CourseService {
-    List<Course> findAll();
+    List<CourseDTO> findAll();
 
-    Course save(Course course);
+    CourseDTO save(CourseDTO course);
 
-    Course update(Integer id, Course course);
+    CourseDTO update(Integer id, CourseDTO course);
 
-    Optional<Course> findOne(Integer id);
+    Optional<CourseDTO> findOne(Integer id);
 
     void delete(Integer id);
 }

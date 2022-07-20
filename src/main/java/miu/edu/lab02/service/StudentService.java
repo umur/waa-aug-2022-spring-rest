@@ -1,27 +1,27 @@
 package miu.edu.lab02.service;
 
-import miu.edu.lab02.model.Course;
-import miu.edu.lab02.model.Student;
+import miu.edu.lab02.dto.CourseDTO;
+import miu.edu.lab02.dto.StudentDTO;
 
 import java.util.List;
 import java.util.Optional;
 
 interface StudentService {
-    List<Student> findAll();
+    List<StudentDTO> findAll();
 
-    Student save(Student student);
+    StudentDTO save(StudentDTO student);
 
-    Student update(Integer id, Student student);
+    StudentDTO update(Integer id, StudentDTO student);
 
-    Optional<Student> findOne(Integer id);
+    Optional<StudentDTO> findOne(Integer id);
 
     void delete(Integer id);
 
-    Student addCourse(Integer studentId, String courseCode);
+    StudentDTO addCourse(Integer studentId, String courseCode);
 
-    Student removeCourse(Integer studentId, String courseCode);
+    StudentDTO removeCourse(Integer studentId, String courseCode);
 
-    List<Student> getStudentsByMajor(String major);
+    List<StudentDTO> getStudentsByMajor(String major);
 
-    List<Course> getCoursesByStudentId(Integer id);
+    List<CourseDTO> getCoursesByStudentId(Integer id);
 }

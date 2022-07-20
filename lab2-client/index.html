@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+</head>
+
+<body>
+    <script src="scripts/index.js" type="text/javascript"></script>
+    <div class="nav-bar">
+        <div id="greeting-texts" class="greeting-texts">Students & Courses</div>
+    </div>
+    <div id="body-content-welcome" class="body-content-welcome">
+        Welcome
+    </div>
+    <div id="body-content" class="body-content">
+        <div id="product-list" class="product-list">
+            <h1 class="produc-list-header">Student List</h1>
+            <table id="products-table" class="data-table">
+
+            </table>
+        </div>
+        <div class="course-container">
+            <h1 class="produc-list-header">All Courses</h1>
+            <table id="items-table" class="data-table">
+            </table>
+            <h1 class="produc-list-header">Add new Course</h1>
+            <table id="items-table" class="data-table">
+                <th>ID</th><th>Name</th><th>Code</th><th>Action</th>
+                <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><button onclick="addNewCourse()"> Add course</button></td></tr>
+            </table>
+        </div>
+        <div id="place-order-buttton" class="place-order-details">
+            <div class="place-order-buttton-container">
+                <button id="place-order-buttton" class="place-order-buttton">Place Order</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

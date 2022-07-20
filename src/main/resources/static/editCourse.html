@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Application</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="courses.js"></script>
+</head>
+<body>
+    <div class="form-wrapper">
+        <h2>Course</h2>
+        <input hidden placeholder="Firstname" id="id" />
+        <div class="form-item">
+            <label>Name</label>
+            <input required placeholder="Name" id="name" />
+        </div>
+        <div class="form-item">
+            <label>Code</label>
+            <input required placeholder="Code" id="code" />
+        </div>
+        <div>
+            <button onclick="update()">Save</button>
+        </div>
+    </div>
+</body>
+</html>

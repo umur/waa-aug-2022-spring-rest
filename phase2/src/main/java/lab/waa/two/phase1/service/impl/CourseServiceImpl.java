@@ -1,5 +1,6 @@
 package lab.waa.two.phase1.service.impl;
 
+import lab.waa.two.phase1.dto.CourseDto;
 import lab.waa.two.phase1.entity.Course;
 import lab.waa.two.phase1.repository.CourseRepo;
 import lab.waa.two.phase1.service.CourseService;
@@ -7,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -14,8 +16,8 @@ public class CourseServiceImpl implements CourseService {
   private final CourseRepo courseRepo;
 
   @Override
-  public void save(Course course) {
-    courseRepo.save(course);
+  public void save(CourseDto courseDto) {
+    courseRepo.save(CourseDto.toCourse(courseDto));
   }
 
   @Override
@@ -24,17 +26,20 @@ public class CourseServiceImpl implements CourseService {
   }
 
   @Override
-  public void update(Long id, Course course) {
-    courseRepo.update(id, course);
+  public void update(Long id, CourseDto courseDto) {
+    courseRepo.update(id, CourseDto.toCourse(courseDto));
   }
 
   @Override
-  public List<Course> getAll() {
-    return courseRepo.getAll();
+  public List<CourseDto> getAll() {
+    return courseRepo.getAll()
+      .stream()
+      .map(CourseDto::toDTO)
+      .collect(Collectors.toList());
   }
 
   @Override
-  public Course getById(Long id) {
-    return courseRepo.getById(id);
+  public CourseDto getById(Long id) {
+    return CourseDto.toDTO(courseRepo.getById(id));
   }
 }

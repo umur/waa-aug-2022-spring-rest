@@ -1,5 +1,7 @@
 package lab.waa.two.phase1.service;
 
+import lab.waa.two.phase1.dto.CourseDto;
+import lab.waa.two.phase1.dto.StudentDto;
 import lab.waa.two.phase1.entity.Course;
 import lab.waa.two.phase1.entity.Student;
 import org.springframework.stereotype.Service;
@@ -8,17 +10,17 @@ import java.util.List;
 
 @Service
 public interface StudentService {
-  void save(Student student);
+  void save(StudentDto studentDto);
 
   void delete(Long id);
 
-  void update(Long id, Student student);
+  void update(Long id, StudentDto studentDto);
 
-  List<Student> getAll();
+  List<StudentDto> getAll();
 
-  Student getById(Long id);
+  StudentDto getById(Long id);
 
-  List<Student> getStudentsByMajor(String major);
+  List<StudentDto> getStudentsByMajor(String major);
 
-  List<Course> getCoursesByStudentId(Long id);
+  List<CourseDto> getCoursesByStudentId(Long id);
 }

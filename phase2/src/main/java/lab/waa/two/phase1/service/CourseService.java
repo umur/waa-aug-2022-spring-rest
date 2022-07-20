@@ -1,19 +1,19 @@
 package lab.waa.two.phase1.service;
 
-import lab.waa.two.phase1.entity.Course;
+import lab.waa.two.phase1.dto.CourseDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public interface CourseService {
-  void save(Course course);
+  void save(CourseDto courseDto);
 
   void delete(Long id);
 
-  void update(Long id, Course course);
+  void update(Long id, CourseDto courseDto);
 
-  List<Course> getAll();
+  List<CourseDto> getAll();
 
-  Course getById(Long id);
+  CourseDto getById(Long id);
 }

@@ -1,5 +1,6 @@
 package lab.waa.two.phase1.controller;
 
+import lab.waa.two.phase1.dto.CourseDto;
 import lab.waa.two.phase1.entity.Course;
 import lab.waa.two.phase1.entity.Student;
 import lab.waa.two.phase1.service.CourseService;
@@ -18,25 +19,25 @@ public class CourseController {
   private final CourseService courseService;
 
   @GetMapping
-  public ResponseEntity<List<Course>> getAll() {
+  public ResponseEntity<List<CourseDto>> getAll() {
     return ResponseEntity.ok(courseService.getAll());
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<Course> getById(@PathVariable Long id) {
+  public ResponseEntity<CourseDto> getById(@PathVariable Long id) {
     return ResponseEntity.ok(courseService.getById(id));
   }
 
   @PostMapping
-  public ResponseEntity<Void> save(@RequestBody Course course) {
-    courseService.save(course);
+  public ResponseEntity<Void> save(@RequestBody CourseDto courseDto) {
+    courseService.save(courseDto);
     return new ResponseEntity<Void>(HttpStatus.CREATED);
 
   }
 
   @PutMapping("/{id}")
-  public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody Course course) {
-    courseService.update(id, course);
+  public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody CourseDto courseDto) {
+    courseService.update(id, courseDto);
     return ResponseEntity.ok().build();
   }
 

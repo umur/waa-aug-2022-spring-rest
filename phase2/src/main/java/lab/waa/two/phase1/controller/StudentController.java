@@ -1,7 +1,7 @@
 package lab.waa.two.phase1.controller;
 
-import lab.waa.two.phase1.entity.Course;
-import lab.waa.two.phase1.entity.Student;
+import lab.waa.two.phase1.dto.CourseDto;
+import lab.waa.two.phase1.dto.StudentDto;
 import lab.waa.two.phase1.service.StudentService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,25 +17,25 @@ public class StudentController {
   private final StudentService studentService;
 
   @GetMapping
-  public ResponseEntity<List<Student>> getAll() {
+  public ResponseEntity<List<StudentDto>> getAll() {
     return ResponseEntity.ok(studentService.getAll());
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<Student> getById(@PathVariable Long id) {
+  public ResponseEntity<StudentDto> getById(@PathVariable Long id) {
     return ResponseEntity.ok(studentService.getById(id));
   }
 
   @PostMapping
-  public ResponseEntity<Void> save(@RequestBody Student student) {
-    studentService.save(student);
+  public ResponseEntity<Void> save(@RequestBody StudentDto studentDto) {
+    studentService.save(studentDto);
     return new ResponseEntity<Void>(HttpStatus.CREATED);
 
   }
 
   @PutMapping("/{id}")
-  public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody Student student) {
-    studentService.update(id, student);
+  public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody StudentDto studentDto) {
+    studentService.update(id, studentDto);
     return ResponseEntity.ok().build();
   }
 
@@ -45,14 +45,14 @@ public class StudentController {
     return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
   }
 
-  @GetMapping("/students-by-major")
-  public List<Student> getStudentByMajor(@RequestParam String major) {
+  @GetMapping("/filter-by-major")
+  public List<StudentDto> getStudentByMajor(@RequestParam String major) {
     return studentService.getStudentsByMajor(major);
   }
 
-  @GetMapping("/courses-by-student-id")
-  public List<Course> getCoursesByStudentId(@RequestParam Long studentId) {
-    return studentService.getCoursesByStudentId(studentId);
+  @GetMapping("/{id}/courses")
+  public List<CourseDto> getCoursesByStudentId(@PathVariable Long id) {
+    return studentService.getCoursesByStudentId(id);
   }
 
 }

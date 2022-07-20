@@ -1,13 +1,16 @@
 package lab.waa.two.phase1.service.impl;
 
+import lab.waa.two.phase1.dto.CourseDto;
+import lab.waa.two.phase1.dto.StudentDto;
 import lab.waa.two.phase1.entity.Course;
-import lab.waa.two.phase1.entity.Student;
 import lab.waa.two.phase1.repository.StudentRepo;
 import lab.waa.two.phase1.service.StudentService;
 import lombok.RequiredArgsConstructor;
+import lombok.var;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -16,8 +19,8 @@ public class StudentServiceImpl implements StudentService {
   private final StudentRepo studentRepo;
 
   @Override
-  public void save(Student student) {
-    studentRepo.save(student);
+  public void save(StudentDto studentDto) {
+    studentRepo.save(StudentDto.toStudent(studentDto));
   }
 
   @Override
@@ -26,28 +29,38 @@ public class StudentServiceImpl implements StudentService {
   }
 
   @Override
-  public void update(Long id, Student student) {
-    studentRepo.update(id, student);
+  public void update(Long id, StudentDto studentDto) {
+    studentRepo.update(id, StudentDto.toStudent(studentDto));
   }
 
   @Override
-  public List<Student> getAll() {
-    return studentRepo.getAll();
+  public List<StudentDto> getAll() {
+    return studentRepo.getAll()
+      .stream()
+      .map(StudentDto::toDTO)
+      .collect(Collectors.toList());
   }
 
   @Override
-  public Student getById(Long id) {
-    return studentRepo.getById(id);
+  public StudentDto getById(Long id) {
+    return StudentDto.toDTO(studentRepo.getById(id));
   }
 
   @Override
-  public List<Student> getStudentsByMajor(String major) {
-    return studentRepo.getStudentsByMajor(major);
+  public List<StudentDto> getStudentsByMajor(String major) {
+
+    return studentRepo.getStudentsByMajor(major)
+      .stream()
+      .map(StudentDto::toDTO)
+      .collect(Collectors.toList());
   }
 
   @Override
-  public List<Course> getCoursesByStudentId(Long id) {
-    return studentRepo.getCoursesByStudentId(id);
+  public List<CourseDto> getCoursesByStudentId(Long id) {
+    return studentRepo.getCoursesByStudentId(id)
+      .stream()
+      .map(CourseDto::toDTO)
+      .collect(Collectors.toList());
   }
 
 }

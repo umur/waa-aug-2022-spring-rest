@@ -1,6 +1,7 @@
 package waa.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import waa.domain.Course;
 import waa.domain.Student;
@@ -11,6 +12,7 @@ import waa.repository.StudentRepository;
 import java.util.List;
 
 @Service
+@Profile("DTOMapper")
 public class StudentServiceImplementation implements StudentService{
 
     @Autowired

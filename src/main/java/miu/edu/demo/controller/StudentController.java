@@ -13,6 +13,7 @@ import java.util.List;
 public class StudentController {
     private final StudentService studentService;
 
+
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
@@ -49,7 +50,9 @@ public class StudentController {
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void deleteStudent(@PathVariable int id){
         studentService.deleteStudent(id);
     }
+
 }

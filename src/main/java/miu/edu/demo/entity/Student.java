@@ -14,6 +14,6 @@ public class Student {
     private List<Course> coursesTaken;
     private String gpa;
 
-    private boolean deleted;
+    private boolean deleted = false;
 
 }

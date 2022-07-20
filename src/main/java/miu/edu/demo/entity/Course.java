@@ -8,5 +8,5 @@ public class Course {
     private String name;
     private String code;
 
-    private boolean deleted;
+    private boolean deleted = false;
 }

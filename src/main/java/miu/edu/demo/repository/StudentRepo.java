@@ -32,10 +32,12 @@ public class StudentRepo {
     }
 
     public void deleteStudent(int id) {
-        studentList = studentList
+        Student student1 = studentList
                 .stream()
-                .filter(student -> student.getId() != id)
-                .collect(Collectors.toList());
+                .filter(student -> student.getId() == id)
+                .findFirst()
+                .orElseThrow(() -> new NoSuchElementException("No such student with id: " + id));
+        student1.setDeleted(true);
     }
 
     public void updateStudent(int id, Student student) {

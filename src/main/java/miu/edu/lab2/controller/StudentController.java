@@ -1,8 +1,9 @@
-package miu.edu.lab2.phase1.controller;
+package miu.edu.lab2.controller;
 
-import miu.edu.lab2.phase1.entity.Course;
-import miu.edu.lab2.phase1.entity.Student;
-import miu.edu.lab2.phase1.service.StudentService;
+import miu.edu.lab2.dto.StudentDTO;
+import miu.edu.lab2.entity.Course;
+import miu.edu.lab2.entity.Student;
+import miu.edu.lab2.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,8 +25,8 @@ public class StudentController {
     }
 
     @PostMapping
-    public Student createStudent(@RequestBody Student student) {
-        return service.createStudent(student);
+    public Student createStudent(@RequestBody StudentDTO studentDTO) {
+        return service.createStudent(studentDTO);
     }
 
     @DeleteMapping("/{studentId}")
@@ -34,8 +35,8 @@ public class StudentController {
     }
 
     @PutMapping("/")
-    public Student updateStudent(@RequestBody Student student) throws Exception {
-        return service.updateStudent(student);
+    public Student updateStudent(@RequestBody StudentDTO studentDTO) throws Exception {
+        return service.updateStudent(studentDTO);
     }
 
 

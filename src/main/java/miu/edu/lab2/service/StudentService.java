@@ -1,8 +1,9 @@
-package miu.edu.lab2.phase1.service;
+package miu.edu.lab2.service;
 
-import miu.edu.lab2.phase1.entity.Course;
-import miu.edu.lab2.phase1.entity.Student;
-import miu.edu.lab2.phase1.repository.StudentRepository;
+import miu.edu.lab2.dto.StudentDTO;
+import miu.edu.lab2.entity.Course;
+import miu.edu.lab2.entity.Student;
+import miu.edu.lab2.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,12 +33,14 @@ public class StudentService {
         return studentRepository.findById(id);
     }
 
-    public Student createStudent(Student student) {
+    public Student createStudent(StudentDTO studentDTO) {
+        Student student = studentDTO.toStudent();
         studentRepository.save(student);
         return student;
     }
 
-    public Student updateStudent(Student student) throws Exception {
+    public Student updateStudent(StudentDTO studentDTO) throws Exception {
+        Student student = studentDTO.toStudent();
         return studentRepository.update(student);
     }
 

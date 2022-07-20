@@ -1,0 +1,13 @@
+package com.lab2.waaaug2022springrest.phase1;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class RestApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(RestApplication.class, args);
+    }
+
+}

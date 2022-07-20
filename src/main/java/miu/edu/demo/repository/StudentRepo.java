@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Repository
 public class StudentRepo {
@@ -31,11 +32,19 @@ public class StudentRepo {
     }
 
     public void deleteStudent(int id) {
-        studentList.remove(id);
+        studentList = studentList
+                .stream()
+                .filter(student -> student.getId() != id)
+                .collect(Collectors.toList());
     }
 
     public void updateStudent(int id, Student student) {
-        studentList.set(id, student);
+        int index = IntStream.range(0, studentList.size()-1)
+                .filter(i -> studentList.get(i).getId() == id)
+                .findFirst()
+                .orElseThrow(() -> new NoSuchElementException("No such student with id: " + id));
+
+        studentList.set(index, student);
     }
 
     public List<Student> filterStudents(Predicate<Student> predicate) {

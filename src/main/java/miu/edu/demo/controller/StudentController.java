@@ -38,8 +38,8 @@ public class StudentController {
         studentService.addStudent(studentDTO);
     }
 
-    @PatchMapping("/{studentId}")
-    public StudentDTO addCourseToStudent(@PathVariable int studentId, @RequestBody int courseId){
+    @PatchMapping("/{studentId}/courses/{courseId}")
+    public StudentDTO addCourseToStudent(@PathVariable int studentId, @PathVariable int courseId){
         return studentService.addCourseToStudent(studentId, courseId);
     }
 
@@ -48,5 +48,8 @@ public class StudentController {
         studentService.updateStudent(id, studentDTO);
     }
 
-
+    @DeleteMapping("/{id}")
+    public void deleteStudent(@PathVariable int id){
+        studentService.deleteStudent(id);
+    }
 }

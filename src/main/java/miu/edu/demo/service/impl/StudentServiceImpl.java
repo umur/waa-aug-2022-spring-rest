@@ -75,4 +75,9 @@ public class StudentServiceImpl implements StudentService {
         return modelMapper.map(student, StudentDTO.class);
     }
 
+    @Override
+    public void deleteStudent(int studentId) {
+        studentRepo.deleteStudent(studentId);
+    }
+
 }

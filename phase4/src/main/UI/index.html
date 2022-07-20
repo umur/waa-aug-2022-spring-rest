@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>name</label>
+<input id="nameinput" type="text">
+<label>code</label>
+<input id="codeinput" type="text">
+<input type="button" onclick="submitCourse()" value="submit course">
+
+<script>
+    function submitCourse() {
+        fetch('http://localhost:8080/courses', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: document.getElementById('nameinput').value,
+                code: document.getElementById('codeinput').value
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        }).then(e => e.json())
+            .then(e => {
+                document.getElementById('nameinput').value = "";
+                document.getElementById('codeinput').value = "";
+            }).catch(err => alert(err));
+    }
+</script>
+</body>
+</html>

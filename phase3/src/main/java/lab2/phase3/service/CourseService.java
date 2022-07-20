@@ -23,20 +23,20 @@ public class CourseService implements ICourseService {
 
     @Override
     public Boolean create(CourseDTO course) {
-        return repo.create(mapper.map(course,Course.class));
+        return repo.create(mapper.map(course, Course.class));
     }
 
     @Override
     public List<CourseDTO> read() {
         var data = repo.read();
         var result = new ArrayList<CourseDTO>();
-         mapper.map(data,result);
-         return result;
+        data.forEach(e -> result.add(mapper.map(e, CourseDTO.class)));
+        return result;
     }
 
     @Override
     public Boolean update(int id, CourseDTO course) {
-        return repo.update(id, mapper.map(course,Course.class));
+        return repo.update(id, mapper.map(course, Course.class));
     }
 
     @Override

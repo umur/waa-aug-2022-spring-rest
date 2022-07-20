@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("courses")
+@CrossOrigin
 public class CourseController {
     private final CourseService serv;
 

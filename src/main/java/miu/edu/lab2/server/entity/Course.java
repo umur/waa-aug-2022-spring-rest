@@ -1,4 +1,4 @@
-package miu.edu.lab2.entity;
+package miu.edu.lab2.server.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

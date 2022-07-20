@@ -1,26 +1,30 @@
-package miu.edu.lab2.controller;
+package miu.edu.lab2.server.controller;
 
-import miu.edu.lab2.dto.StudentDTO;
-import miu.edu.lab2.entity.Course;
-import miu.edu.lab2.entity.Student;
-import miu.edu.lab2.service.StudentService;
+import miu.edu.lab2.server.dto.StudentDTO;
+import miu.edu.lab2.server.entity.Course;
+import miu.edu.lab2.server.entity.Student;
+import miu.edu.lab2.server.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping(path = "/students")
 public class StudentController {
-    private StudentService service;
+    private final StudentService service;
 
     @Autowired
     public StudentController(StudentService service) {
         this.service = service;
     }
-
     @GetMapping
-    public List<Student> findAllStudents() {
+    public List<Student> fetchStudents(@RequestParam(name = "major", required = false) String major){
+        if(!ObjectUtils.isEmpty(major)) {
+            return service.getStudentsByMajor(major);
+        }
         return service.findAllStudents();
     }
 
@@ -34,20 +38,14 @@ public class StudentController {
         return service.deleteStudentById(studentId);
     }
 
-    @PutMapping("/")
+    @PutMapping
     public Student updateStudent(@RequestBody StudentDTO studentDTO) throws Exception {
         return service.updateStudent(studentDTO);
     }
 
-
     @GetMapping("/{studentId}")
     public Student findStudentById(@PathVariable int studentId){
         return service.findStudentById(studentId);
-    }
-
-    @GetMapping("/")
-    public List<Student> getStudentsByMajor(@RequestParam String major){
-        return service.getStudentsByMajor(major);
     }
 
     @GetMapping("/{studentId}/courses")

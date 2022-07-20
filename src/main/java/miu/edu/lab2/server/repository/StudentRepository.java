@@ -1,6 +1,6 @@
-package miu.edu.lab2.repository;
+package miu.edu.lab2.server.repository;
 
-import miu.edu.lab2.entity.Student;
+import miu.edu.lab2.server.entity.Student;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

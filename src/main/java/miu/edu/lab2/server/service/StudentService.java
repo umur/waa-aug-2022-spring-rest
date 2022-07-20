@@ -1,10 +1,10 @@
-package miu.edu.lab2.service;
+package miu.edu.lab2.server.service;
 
-import miu.edu.lab2.dto.CourseDTO;
-import miu.edu.lab2.dto.StudentDTO;
-import miu.edu.lab2.entity.Course;
-import miu.edu.lab2.entity.Student;
-import miu.edu.lab2.repository.StudentRepository;
+import miu.edu.lab2.server.dto.CourseDTO;
+import miu.edu.lab2.server.dto.StudentDTO;
+import miu.edu.lab2.server.entity.Course;
+import miu.edu.lab2.server.entity.Student;
+import miu.edu.lab2.server.repository.StudentRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

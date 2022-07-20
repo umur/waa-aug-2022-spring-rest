@@ -1,19 +1,20 @@
-package miu.edu.lab2.dto;
+package miu.edu.lab2.server.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
 @Data
 @AllArgsConstructor
-public class StudentDTO {
-    private static int idCounter = 1;
-
+@NoArgsConstructor
+public class Student {
     private int id;
     private String firstName;
     private String lastName;
     private String email;
     private String major;
-    private List<CourseDTO> coursesTaken;
+    private List<Course> coursesTaken;
     private double gpa;
 }

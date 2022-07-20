@@ -1,4 +1,4 @@
-package miu.edu.lab2;
+package miu.edu.lab2.server;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;

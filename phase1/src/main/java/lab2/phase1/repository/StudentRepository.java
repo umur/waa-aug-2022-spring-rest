@@ -43,15 +43,17 @@ public class StudentRepository {
     }
 
     public List<Student> getStudentsByMajor(String major) {
-        return arr.stream()
-                .filter(e -> e.getMajor() == major)
+        var result = arr.stream()
+                .filter(e -> e.getMajor().equals(major))
                 .collect(Collectors.toList());
+        return result;
     }
 
     public List<Course> getCoursesByStudentId(int studentId) {
-        return arr.stream()
+        var result = arr.stream()
                 .filter(e -> e.getId() == studentId)
                 .flatMap(e -> e.getCoursesTaken().stream())
                 .collect(Collectors.toList());
+        return result;
     }
 }

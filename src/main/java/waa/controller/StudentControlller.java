@@ -3,8 +3,8 @@ package waa.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import waa.domain.Course;
-import waa.domain.Student;
+import waa.dto.CourseDTO;
+import waa.dto.StudentDTO;
 import waa.service.StudentService;
 
 import java.util.List;
@@ -17,37 +17,37 @@ public class StudentControlller {
     private StudentService studentService;
 
     @GetMapping
-    public List<Student> findAllStudents(){
+    public List<StudentDTO> findAllStudents(){
         return studentService.findAllStudents();
     }
 
     @PostMapping
-    public Student createStudent(@RequestBody Student student){
-        return studentService.createStudent(student);
+    public StudentDTO createStudent(@RequestBody StudentDTO studentDTO){
+        return studentService.createStudent(studentDTO);
     }
 
     @DeleteMapping("{id}")
-    public Student deleteStudent(@PathVariable int id) throws Exception {
+    public StudentDTO deleteStudent(@PathVariable int id) throws Exception {
         return studentService.removeStudentById(id);
     }
 
     @PutMapping
-    public Student updateStudent(@RequestBody Student student) throws Exception {
-        return studentService.updateStudent(student);
+    public StudentDTO updateStudent(@RequestBody StudentDTO studentDTO) throws Exception {
+        return studentService.updateStudent(studentDTO);
     }
 
     @GetMapping("/{id}")
-    public Student findStudentById(@PathVariable int id){
+    public StudentDTO findStudentById(@PathVariable int id){
         return studentService.findStudentById(id);
     }
 
     @GetMapping("/major/{major}")
-    public List<Student> getStudentsByMajor(@PathVariable String major){
+    public List<StudentDTO> getStudentsByMajor(@PathVariable String major){
         return studentService.findStudentByMajor(major);
     }
 
     @GetMapping("/courses/{id}")
-    public List<Course> getCoursesByStudentId(@PathVariable int id){
+    public List<CourseDTO> getCoursesByStudentId(@PathVariable int id){
         return studentService.findCoursesByStudentId(id);
     }
 }

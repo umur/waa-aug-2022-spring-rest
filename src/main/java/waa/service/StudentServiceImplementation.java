@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import waa.domain.Course;
 import waa.domain.Student;
+import waa.dto.CourseDTO;
+import waa.dto.StudentDTO;
 import waa.repository.StudentRepository;
 
 import java.util.List;
@@ -14,39 +16,50 @@ public class StudentServiceImplementation implements StudentService{
     @Autowired
     StudentRepository studentRepository;
 
+    @Autowired
+    DtoObjectMapper dtoObjectMapper;
+
     @Override
-    public Student createStudent(Student student) {
+    public StudentDTO createStudent(StudentDTO studentDTO) {
+        Student student = dtoObjectMapper.getStudentFromStudentDTO(studentDTO);
         studentRepository.create(student);
-        return student;
+        return studentDTO;
     }
 
     @Override
-    public List<Student> findAllStudents() {
-        return studentRepository.findAll();
+    public List<StudentDTO> findAllStudents() {
+        List<Student> students = studentRepository.findAll();
+        return dtoObjectMapper.getStudentDTOs(students);
     }
 
     @Override
-    public Student findStudentById(Integer studentId) {
-        return studentRepository.findById(studentId);
+    public StudentDTO findStudentById(Integer studentId) {
+        Student student = studentRepository.findById(studentId);
+        return dtoObjectMapper.getStudentDTOFromStudent(student);
     }
 
     @Override
-    public List<Student> findStudentByMajor(String major) {
-        return studentRepository.findByMajor(major);
+    public List<StudentDTO> findStudentByMajor(String major) {
+        List<Student> students = studentRepository.findByMajor(major);
+        return dtoObjectMapper.getStudentDTOs(students);
     }
 
     @Override
-    public Student updateStudent(Student student) throws Exception {
-        return studentRepository.updateStudent(student);
+    public StudentDTO updateStudent(StudentDTO studentDTO) throws Exception {
+        Student student = dtoObjectMapper.getStudentFromStudentDTO(studentDTO);
+        studentRepository.updateStudent(student);
+        return studentDTO;
     }
 
     @Override
-    public Student removeStudentById(Integer studnetId) throws Exception {
-        return studentRepository.removeById(studnetId);
+    public StudentDTO removeStudentById(Integer studentId) throws Exception {
+        Student student = studentRepository.removeById(studentId);
+        return dtoObjectMapper.getStudentDTOFromStudent(student);
     }
 
     @Override
-    public List<Course> findCoursesByStudentId(Integer studnetId) {
-        return studentRepository.findById(studnetId).getCoursesTaken();
+    public List<CourseDTO> findCoursesByStudentId(Integer studentId) {
+        List<Course> courses = studentRepository.findById(studentId).getCoursesTaken();
+        return dtoObjectMapper.getCourseDTOList(courses);
     }
 }

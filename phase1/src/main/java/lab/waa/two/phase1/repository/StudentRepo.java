@@ -19,7 +19,7 @@ public class StudentRepo {
     return studentsDB;
   }
 
-  public Student findById(Long id) {
+  public Student getById(Long id) {
     return studentsDB.stream().filter(d -> d.getId().equals(id)).findFirst().orElse(null);
   }
 
@@ -50,7 +50,6 @@ public class StudentRepo {
     return studentsDB.stream()
       .filter(student -> student.getMajor().equals(major))
       .collect(Collectors.toList());
-
   }
 
   public List<Course> getCoursesByStudentId(Long id) {

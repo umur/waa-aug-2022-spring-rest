@@ -10,11 +10,10 @@ import java.util.List;
 
 @Repository
 public class CourseRepo {
-  private static List<Course> courseDB;
+  private static List<Course> courseDB = new ArrayList<>();
   private static Long idCounter = 1L;
 
   public CourseRepo() {
-    courseDB = new ArrayList<>();
     courseDB.add(new Course(++idCounter, "WAP", "CS01"));
     courseDB.add(new Course(++idCounter, "WAA", "CS02"));
     courseDB.add(new Course(++idCounter, "MPP", "CS03"));
@@ -25,7 +24,7 @@ public class CourseRepo {
     return courseDB;
   }
 
-  public Course findById(Long id) {
+  public Course getById(Long id) {
     return courseDB.stream().filter(d -> d.getId().equals(id)).findFirst().orElse(null);
   }
 

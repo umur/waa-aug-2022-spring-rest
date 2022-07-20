@@ -35,6 +35,6 @@ public class CourseServiceImpl implements CourseService {
 
   @Override
   public Course getById(Long id) {
-    return null;
+    return courseRepo.getById(id);
   }
 }

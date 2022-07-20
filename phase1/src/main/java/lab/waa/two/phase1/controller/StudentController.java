@@ -27,15 +27,15 @@ public class StudentController {
   }
 
   @PostMapping
-  public ResponseEntity<Void> save(@RequestBody Student Student) {
-    studentService.save(Student);
+  public ResponseEntity<Void> save(@RequestBody Student student) {
+    studentService.save(student);
     return new ResponseEntity<Void>(HttpStatus.CREATED);
 
   }
 
   @PutMapping("/{id}")
-  public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody Student Student) {
-    studentService.update(id, Student);
+  public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody Student student) {
+    studentService.update(id, student);
     return ResponseEntity.ok().build();
   }
 
@@ -45,14 +45,14 @@ public class StudentController {
     return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
   }
 
-  @GetMapping("/student-by-major")
+  @GetMapping("/students-by-major")
   public List<Student> getStudentByMajor(@RequestParam String major) {
     return studentService.getStudentsByMajor(major);
   }
 
-  @GetMapping("/get-courses-by-student-id")
-  public List<Course> getCoursesByStudentId(@RequestParam Long id) {
-    return studentService.getCoursesByStudentId(id);
+  @GetMapping("/courses-by-student-id")
+  public List<Course> getCoursesByStudentId(@RequestParam Long studentId) {
+    return studentService.getCoursesByStudentId(studentId);
   }
 
 }

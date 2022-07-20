@@ -1,4 +1,4 @@
-package waa.service;
+package waa.service.implementation;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +9,7 @@ import waa.domain.Student;
 import waa.dto.CourseDTO;
 import waa.dto.StudentDTO;
 import waa.repository.StudentRepository;
+import waa.service.StudentService;
 
 import java.util.List;
 import java.util.stream.Collectors;

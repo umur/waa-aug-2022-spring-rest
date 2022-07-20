@@ -1,4 +1,4 @@
-package cs545waa.lab2;
+package phase3;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;

@@ -5,6 +5,7 @@ import com.javokhir.phase1.domain.Student;
 import com.javokhir.phase1.service.CourseService;
 import com.javokhir.phase1.service.StudentService;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,5 +54,10 @@ public class StudentController {
     @GetMapping("/{id}/courses")
     public List<Course> findStudentCourses(@PathVariable("id") UUID id){
         return courseService.getCoursesByStudentId(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") UUID id){
+        service.delete(id);
     }
 }

@@ -4,6 +4,7 @@ import com.javokhir.phase3.dto.CourseDto;
 import com.javokhir.phase3.service.CourseService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,5 +42,10 @@ public class CourseController {
     @PutMapping
     public CourseDto update(@RequestBody CourseDto course) {
         return service.update(course);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") UUID id){
+        service.delete(id);
     }
 }

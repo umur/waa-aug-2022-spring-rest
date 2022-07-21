@@ -37,6 +37,15 @@ Before implementation, refer to the ‘Useful GIT Videos’ section.
 *  Use bootstrap for styling and responsive design.
 * Communicate with the backend app that you have created in Phase III.
 
+#### Completed for Phase IV
+
+- Added page /students.html to list all students 
+- /courses.html to list all courses
+- /new_student.html to create a new student 
+- /new_course.html to create a new course 
+- /student_courses.html to list all the courses for a particular student 
+- /assign_course.html to assign some specific course for student
+
 ### Tips
 ---
 * Each phase is a different project. 

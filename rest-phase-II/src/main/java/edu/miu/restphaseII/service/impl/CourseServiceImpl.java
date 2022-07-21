@@ -21,6 +21,11 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    public void update(CourseDto courseDto) {
+        courseRepo.update(courseDto.converToCourse());
+    }
+
+    @Override
     public void delete(int id) {
         courseRepo.delete(id);
     }

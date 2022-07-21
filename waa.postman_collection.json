@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "da0d2fea-a3ed-44cf-b612-397f8fcc6ee3",
+		"name": "waa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14955524"
+	},
+	"item": [
+		{
+			"name": "lab2",
+			"item": [
+				{
+					"name": "all",
+					"item": [
+						{
+							"name": "get-all-student",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/students",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"students"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get-all-course",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/courses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"courses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save-student",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"lara\",\n    \"lastName\": \"rani\",\n    \"email\": \"amit@miu.edu\",\n    \"gpa\": 3.85,\n    \"major\": \"cse\",\n    \"coursesTaken\": [\n        {\n            \"id\": 5,\n            \"name\":\"WAX\",\n            \"code\": \"CS05\"\n        },\n        {\n            \"id\": 3,\n            \"name\":\"WAP\",\n            \"code\": \"CS03\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/students",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"students"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save-course",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{      \n    \"name\":\"WYX\",\n    \"code\": \"CS50\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/courses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"courses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "student -get-by-id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/students/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "course -get-by-id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/courses/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"courses",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-student",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/students/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-corse",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/courses/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"courses",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "student update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"firstName\": \"lara\",\n        \"lastName\": \"rani\",\n        \"email\": \"amit@miu.edu\",\n        \"major\": \"cse\",\n        \"gpa\": 4.00,\n        \"coursesTaken\": [\n            {\n                \"id\": 5,\n                \"name\": \"WAX\",\n                \"code\": \"CS05\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"WAP\",\n                \"code\": \"CS03\"\n            }\n        ]\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/students/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "course-update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"WAXX\",\n    \"code\": \"CSE05\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/courses/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"courses",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find-by-major",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/students/filter-by-major?major=cse",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"filter-by-major"
+									],
+									"query": [
+										{
+											"key": "major",
+											"value": "cse"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "courses-by-student-id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/students/2/courses/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"2",
+										"courses",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

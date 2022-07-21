@@ -1,5 +1,5 @@
 
-# swagger url: <a herf='http://localhost:8080/swagger-ui/index.html'/>
+# swagger url: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
 # Lab 2 - RestFUL Web Services
 

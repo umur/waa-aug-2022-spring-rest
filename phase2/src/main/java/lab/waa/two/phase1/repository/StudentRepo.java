@@ -2,6 +2,7 @@ package lab.waa.two.phase1.repository;
 
 import lab.waa.two.phase1.entity.Course;
 import lab.waa.two.phase1.entity.Student;
+import lombok.var;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -16,15 +17,15 @@ public class StudentRepo {
   private Long idCounter = 1L;
 
   public List<Student> getAll() {
-    return studentsDB;
+    return studentsDB.stream().filter(s -> !s.isDeleted()).collect(Collectors.toList());
   }
 
   public Student getById(Long id) {
-    return studentsDB.stream().filter(d -> d.getId().equals(id)).findFirst().orElse(null);
+    return studentsDB.stream().filter(d -> d.getId().equals(id) && !d.isDeleted()).findFirst().orElse(null);
   }
 
   public void update(Long id, Student updatedStudent) {
-    long[] ids = studentsDB.stream().map(s -> s.getId()).mapToLong(Long::longValue).toArray();
+    long[] ids = studentsDB.stream().filter(s -> !s.isDeleted()).map(s -> s.getId()).mapToLong(Long::longValue).toArray();
     int index = Arrays.binarySearch(ids, id);
     if(index < 0) {
       throw new RuntimeException("Student id not found");
@@ -39,21 +40,26 @@ public class StudentRepo {
       student.getEmail(),
       student.getMajor(),
       student.getGpa(),
-      student.getCoursesTaken()));
+      student.getCoursesTaken(),
+      false));
   }
 
   public void delete(Long id) {
-    studentsDB.removeIf(it -> it.getId() == id);
+    var student = studentsDB.stream().filter(c -> c.getId() == id).findFirst().orElse(null);
+
+    if(student != null) {
+      student.setDeleted(true);
+    }
   }
 
   public List<Student> getStudentsByMajor(String major) {
     return studentsDB.stream()
-      .filter(student -> student.getMajor().equals(major))
+      .filter(student -> !student.isDeleted() && student.getMajor().equals(major))
       .collect(Collectors.toList());
   }
 
   public List<Course> getCoursesByStudentId(Long id) {
-    return studentsDB.stream().filter(s -> s.getId() == id)
+    return studentsDB.stream().filter(s -> !s.isDeleted() && s.getId() == id)
       .findFirst()
       .orElseThrow(RuntimeException::new)
       .getCoursesTaken();

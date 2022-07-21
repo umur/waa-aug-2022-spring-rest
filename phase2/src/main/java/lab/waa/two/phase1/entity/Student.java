@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -17,4 +18,5 @@ public class Student {
   private String major;
   private Double gpa;
   private List<Course> coursesTaken;
+  private boolean deleted;
 }

@@ -39,8 +39,18 @@ public class CourseRepo {
         }
     }
 
+    public void update(Course course){
+        Course existingCourse = this.getById(course.getId());
+        if(existingCourse != null) {
+            courses.set(courses.indexOf(existingCourse), course);
+        }
+    }
+
     public void delete(int id) {
-        courses.stream().filter(c -> c.getId() == id).forEach(c -> courses.remove(c));
+        Course course = getById(id);
+        if(course != null){
+            courses.remove(course);
+        }
     }
 
     public Course getById(int id) {

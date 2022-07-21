@@ -38,7 +38,8 @@ public class CourseController {
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable("id") int courseId) {
-        //call service
+    public void update(@PathVariable("id") int courseId, @RequestBody Course course) {
+        course.setId(courseId);
+        courseService.update(course);
     }
 }

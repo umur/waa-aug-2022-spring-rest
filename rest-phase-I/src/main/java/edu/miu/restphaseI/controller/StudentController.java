@@ -44,6 +44,7 @@ public class StudentController {
 
     @PutMapping("/{id}")
     public void update(@PathVariable("id") int studentId, @RequestBody Student student) {
+        student.setId(studentId);
         studentService.update(student);
     }
 

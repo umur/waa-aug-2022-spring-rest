@@ -32,7 +32,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1022,\n    \"name\": \"Advanced Software Development\",\n    \"code\": \"ASD\"\n}\n// {\n//     \"id\" : 1021,\n//     \"name\": \"Web Application Architecture\",\n//     \"code\": \"WAA\"\n// }",
+							"raw": "{\n     \"id\" : 1021,\n     \"name\": \"Web Application Architecture\",\n     \"code\": \"WAA\"\n }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -134,7 +134,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\n{\n    \"id\": 103,\n    \"firstName\": \"Sabina\",\n    \"lastName\": \"Adhikari\",\n    \"email\": \"sbnkrl@gmail.com\",\n    \"major\":\"Compro\",\n    \"gpa\": 4.0\n\n}\n\n",
+							"raw": "{\n    \"id\": 101,\n    \"firstName\": \"Sandeep\",\n    \"lastName\": \"Koirala\",\n    \"email\": \"sndpkrl007@gmail.com\",\n    \"major\":\"Compro\",\n    \"gpa\": 3.9\n\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -193,25 +193,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "Courses",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/students/courses/103",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"students",
-								"courses",
-								"103"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -224,15 +205,15 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/students/courses/103/1022/assign",
+							"raw": "{{BASE_URL}}/students/courses/101/1021/assign",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"students",
 								"courses",
-								"103",
-								"1022",
+								"101",
+								"1021",
 								"assign"
 							]
 						}
@@ -245,14 +226,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/students/courses/103",
+							"raw": "{{BASE_URL}}/students/courses/101",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"students",
 								"courses",
-								"103"
+								"101"
 							]
 						}
 					},

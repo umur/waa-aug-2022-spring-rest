@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "1b1852fc-c059-4289-beff-3dd5ad4db2fd",
+		"name": "Lab2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "627016"
+	},
+	"item": [
+		{
+			"name": "fetchCourses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addCourse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"741bf956-c5a7-448c-834d-3f7a771d1ad1\",\n    \"name\": \"EA\",\n    \"code\": \"CS585\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCourse",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"80502576-9cc6-4e67-82bc-d56a92bf23f7\",\n        \"name\": \"EA\",\n        \"code\": \"CS586\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchCourseById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/courses/04d64eed-acbe-458d-97cb-76401208e4f4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"courses",
+						"04d64eed-acbe-458d-97cb-76401208e4f4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCourse",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/courses/23829fa2-69e7-4c7c-b7a1-9bf401ad49d9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"courses",
+						"23829fa2-69e7-4c7c-b7a1-9bf401ad49d9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Javokhir\",\n    \"lastName\": \"Mamadiyarov\",\n    \"email\": \"javokhir.mamadiyarov@miu.edu\",\n    \"major\": \"MCSC\",\n    \"gpa\": 3.5,\n    \"coursesTaken\": [\n        {\n            \"id\": \"80502576-9cc6-4e67-82bc-d56a92bf23f7\",\n            \"name\": \"EA\",\n            \"code\": \"CS585\"\n        },\n        {\n            \"id\": \"6c08be7c-d98a-4c24-a3b5-71ec782c8b28\",\n            \"name\": \"WAA\",\n            \"code\": \"CS525\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateStudent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"b62c2573-b94d-447c-812d-fdd4bf930b92\",\n    \"firstName\": \"Javokhir2\",\n    \"lastName\": \"Mamadiyarov\",\n    \"email\": \"javokhir.mamadiyarov@miu.edu\",\n    \"major\": \"MCSC\",\n    \"gpa\": 3.5,\n    \"coursesTaken\": [\n        {\n            \"id\": \"80502576-9cc6-4e67-82bc-d56a92bf23f7\",\n            \"name\": \"EA\",\n            \"code\": \"CS585\"\n        },\n        {\n            \"id\": \"6c08be7c-d98a-4c24-a3b5-71ec782c8b28\",\n            \"name\": \"WAA\",\n            \"code\": \"CS525\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchStudents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchStudentById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/students/b62c2573-b94d-447c-812d-fdd4bf930b92",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"b62c2573-b94d-447c-812d-fdd4bf930b92"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteStudent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/students/b62c2573-b94d-447c-812d-fdd4bf930b92",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"b62c2573-b94d-447c-812d-fdd4bf930b92"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findStudentByMajor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/students/find-by-major?major=MCSC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"find-by-major"
+					],
+					"query": [
+						{
+							"key": "major",
+							"value": "MCSC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchStudentCourses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/students/6204a8ca-f1a6-463b-9a72-373113e31230/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"6204a8ca-f1a6-463b-9a72-373113e31230",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

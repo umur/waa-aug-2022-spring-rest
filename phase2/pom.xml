@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.lab2</groupId>
-	<artifactId>phase2</artifactId>
+	<artifactId>phase1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>phase2</name>
+	<name>phase1</name>
 	<description>Lab assignment for WAA course</description>
 	<properties>
 		<java.version>18</java.version>

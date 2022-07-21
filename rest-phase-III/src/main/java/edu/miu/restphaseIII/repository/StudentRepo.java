@@ -46,7 +46,10 @@ public class StudentRepo {
     }
 
     public void delete(int id) {
-        students.stream().filter(s -> s.getId() == id).forEach(s -> students.remove(s));
+        Student student = getById(id);
+        if(student != null){
+            students.remove(student);
+        }
     }
 
     public Student getById(int id) {

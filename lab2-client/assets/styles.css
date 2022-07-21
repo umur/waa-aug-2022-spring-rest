@@ -1,0 +1,135 @@
+.nav-bar {
+    height: 70px;
+    width: 100%;
+    background-color: cornflowerblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-content {
+    margin-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-height: 100vh;
+    overflow: scroll;
+}
+
+.course-container{
+    border: 1px solid #cdc7c7;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+.data-table {
+    width: 100%;
+}
+
+.place-order-details {
+    margin-top: 30px;
+    display: none;
+}
+
+.place-order-buttton-container {
+    float: right;
+    margin-right: 83px;
+}
+
+.total-value-container {
+    border-top: none;
+    border-bottom: 1px solid rgb(128, 126, 126);
+    border-left: 1px solid rgb(128, 126, 126);
+    border-right: 1px solid rgb(128, 126, 126);
+    height: 40px;
+}
+
+.place-order-buttton {
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.total-value {
+    float: right;
+    font-size: 30px;
+    margin-right: 280px;
+}
+
+.shop-logo {
+    width: 70px;
+    height: 70px;
+
+}
+
+.greeting-texts {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.button-container {
+    margin-right: 20px;
+}
+
+.auth-button {
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+table,
+th {
+    border: 1px solid rgb(128, 126, 126);
+}
+
+td {
+    border: 1px solid rgb(128, 126, 126);
+    text-align: center;
+    padding: 10px;
+}
+
+.item-count-input {
+    width: 7%;
+}
+
+.credentials-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.auth-container{
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.product-list{
+   
+}
+
+.produc-list-no-item{
+    display: none;
+}
+
+.body-content-welcome{
+    display: none;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    height: 100vh;
+    font-size: 5vw;
+    align-items: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}   

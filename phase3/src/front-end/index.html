@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+    <style>
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+
+        .styled-table tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+        }
+    </style>
+</head>
+<body>
+<div id="course">
+    <button id="courseBtn" value="Student">Student</button>
+    <br>
+    <fieldset>
+        <legend>Add course</legend>
+        <div class="d-flex flex-wrap">
+            <label for="courseId">ID</label>
+            <input id="courseId" type="text">
+            <label for="courseName">Name</label>
+            <input id="courseName" type="text">
+            <label for="courseCode">Code</label>
+            <input id="courseCode" type="text">
+            <button id="addCourseBtn" value="Add">Add</button>
+            <button id="updateCourseBtn" value="Add">Update</button>
+        </div>
+    </fieldset>
+    <fieldset class="d-flex flex-wrap">
+        <legend>Search and delete by ID</legend>
+        <label for="searchCourseId">Id</label>
+        <input id="searchCourseId" type="text">
+        <button id="searchCourseByIdBtn">Search course by Id</button>
+        <button id="deleteCourseByIdBtn">Delete course by Id</button>
+    </fieldset>
+    <table class="styled-table">
+        <thread>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Code</th>
+            </tr>
+        </thread>
+        <tbody id="courseBody"></tbody>
+    </table>
+    <button id="getCourse">Get all course</button>
+</div>
+<div id="student" style="display: none">
+    <button id="studentBtn" value="Course">Course</button>
+    <br>
+    <fieldset>
+        <legend>Add student</legend>
+        <div class="d-flex flex-wrap">
+            <label for="studentId">ID</label>
+            <input id="studentId" type="text">
+            <label for="studentFn">First name</label>
+            <input id="studentFn" type="text">
+        </div>
+        <div class="d-flex flex-wrap">
+            <label for="studentLn">Last name</label>
+            <input id="studentLn" type="text">
+            <label for="studentEmail">Email</label>
+            <input id="studentEmail" type="text">
+        </div>
+        <div class="d-flex flex-wrap">
+            <label for="studentMajor">Major</label>
+            <input id="studentMajor" type="text">
+            <label for="studentGpa">Gpa</label>
+            <input id="studentGpa" type="text">
+        </div>
+        <fieldset class="d-flex flex-wrap">
+            <legend>Course taken:</legend>
+            <label for="stuCourseId">ID</label>
+            <input id="stuCourseId" type="text">
+            <label for="stuCourseName">Name</label>
+            <input id="stuCourseName" type="text">
+            <label for="stCourseCode">Code</label>
+            <input id="stCourseCode" type="text">
+        </fieldset>
+
+        <button id="addStudentBtn" value="Add">Add</button>
+        <button id="updateStudentBtn" value="Update">Update</button>
+    </fieldset>
+    <fieldset class="d-flex flex-wrap">
+        <legend>Search and delete by Id</legend>
+        <label for="searchStudentId">Id</label>
+        <input id="searchStudentId" type="text">
+        <button id="searchStudentByIdBtn">Search student by Id</button>
+        <button id="searchStuCourseByIdBtn">Search course by student's Id</button>
+        <button id="deleteStudentByIdBtn">Delete student by Id</button>
+    </fieldset>
+    <fieldset class="d-flex flex-wrap">
+        <legend>Major search</legend>
+        <label for="searchStudentMajor">Major</label>
+        <input id="searchStudentMajor" type="text">
+        <button id="searchStudentByMajorBtn">Search student by Major</button>
+        <table class="styled-table">
+            <thread>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Code</th>
+                </tr>
+            </thread>
+            <tbody id="searchCourseBody"></tbody>
+        </table>
+    </fieldset>
+    <table class="styled-table">
+        <thread>
+            <tr>
+                <th>ID</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Major</th>
+                <th>Gpa</th>
+                <th>Courses Taken</th>
+            </tr>
+        </thread>
+        <tbody id="studentBody"></tbody>
+    </table>
+    <button id="getStudentBtn">Get all student</button>
+</div>
+</body>
+</html>

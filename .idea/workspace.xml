@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c8573387-b257-4d85-a1d7-11a9d55145b3" name="Changes" comment="finish lab 2 with 3 project for 4 phase">
+      <change afterPath="$PROJECT_DIR$/phase3/src/main/java/waa/phase3/configuration/MappingConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phase3/src/main/java/waa/phase3/Phase3Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/phase3/src/main/java/waa/phase3/Phase3Application.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2CAvKcIFKL9ry7GRvGOEjpqO9sK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/ThanhTrungLe/Desktop/Project/waa-aug-2022-spring-rest",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "spring.configuration.checksum": "710a9267fdbfa1e14decca05af03a0c7"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ThanhTrungLe\Desktop\Project\waa-aug-2022-spring-rest\lab2\src\main\java\waa\lab2" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="waa.lab2.controller" />
+      <recent name="waa.lab2.dto" />
+      <recent name="waa.lab2.service" />
+      <recent name="waa.lab2.entity" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="phase1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="phase1" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Phase3Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="phase3" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="waa.phase3.Phase3Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="waa.phase3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Phase3Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c8573387-b257-4d85-a1d7-11a9d55145b3" name="Changes" comment="" />
+      <created>1658258140629</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658258140629</updated>
+      <workItem from="1658258141896" duration="4722000" />
+      <workItem from="1658264120382" duration="281000" />
+      <workItem from="1658264417355" duration="28000" />
+      <workItem from="1658264465239" duration="295000" />
+      <workItem from="1658264776743" duration="464000" />
+      <workItem from="1658265375821" duration="32000" />
+      <workItem from="1658265432636" duration="187000" />
+      <workItem from="1658265639070" duration="29000" />
+      <workItem from="1658288778812" duration="10000" />
+      <workItem from="1658288798054" duration="5126000" />
+      <workItem from="1658293981493" duration="836000" />
+      <workItem from="1658339625037" duration="3172000" />
+    </task>
+    <task id="LOCAL-00001" summary="finish lab 2 with 3 project for 4 phase">
+      <created>1658342263112</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1658342263112</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="finish lab 2 with 3 project for 4 phase" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish lab 2 with 3 project for 4 phase" />
+  </component>
+</project>

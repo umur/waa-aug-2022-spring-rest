@@ -1,4 +1,5 @@
-package com.javokhir.phase1.domain;
+package com.javokhir.phase3.dto;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +13,7 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Student {
+public class StudentDto {
 
     private UUID id;
     private String firstName;
@@ -20,7 +21,6 @@ public class Student {
     private String email;
     private String major;
     private float gpa;
-    private List<Course> coursesTaken;
-
+    private List<CourseDto> coursesTaken;
 
 }

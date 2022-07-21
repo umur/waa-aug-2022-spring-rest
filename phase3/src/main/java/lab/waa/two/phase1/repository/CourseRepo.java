@@ -35,7 +35,6 @@ public class CourseRepo {
     if(course == null) {
       throw new RuntimeException("Course not found by id");
     }
-    course.setId(id);
     course.setCode(updatedCourse.getCode());
     course.setName(updatedCourse.getName());
   }

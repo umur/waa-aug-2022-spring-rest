@@ -54,7 +54,7 @@ public class StudentRepo {
 
   public List<Student> getStudentsByMajor(String major) {
     return studentsDB.stream()
-      .filter(student -> !student.isDeleted() && student.getMajor().equals(major))
+      .filter(student -> !student.isDeleted() && student.getMajor().toLowerCase().equals(major.toLowerCase()))
       .collect(Collectors.toList());
   }
 

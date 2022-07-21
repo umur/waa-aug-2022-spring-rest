@@ -1,0 +1,438 @@
+{
+	"id": "cc9ce060-e722-d0ca-ebc6-4e80e5deed85",
+	"name": "assignment-2",
+	"description": "",
+	"order": [
+		"6e834681-59be-2abf-07a0-9adb123e0427",
+		"ff478292-6deb-f4e7-df4f-d79721097107",
+		"9a6a2986-b508-e453-c9fc-e3f91eb3b4f4",
+		"55c735ed-0d19-5b0c-d2b5-649ce0b6ad66",
+		"e7514213-fb8a-5f0a-c456-69d3a5aaa0b0",
+		"01d44803-1709-18f3-0918-18ac0827a24e",
+		"9f14c17a-706b-af92-3ca8-18e77ac8f4b4",
+		"4070ef5c-6ae5-b551-71ed-181bc496e7c6",
+		"62149876-69b9-ccb6-415e-feb0139a1bf2",
+		"504ba9bf-59d9-1536-9da5-a3bfebe2de8c",
+		"6d00afce-7e2d-3018-b524-9ea5263a67ba"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1658372330447,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "01d44803-1709-18f3-0918-18ac0827a24e",
+			"headers": "Content-Type: application/json\nauthorization: Bearer jharna23\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer jharna23",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/v1/students",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1658375306387,
+			"name": "updateStudent",
+			"description": "",
+			"collectionId": "cc9ce060-e722-d0ca-ebc6-4e80e5deed85",
+			"responses": [],
+			"rawModeData": "{\n    \"id\": 2,\n    \"firstName\": \"Jh\",\n    \"lastName\": \"Ka\",\n    \"email\": \"jharna@gmail.com\",\n    \"major\": \"compro\",\n    \"gpa\": 0,\n    \"coursesTaken\": [\n        {\n            \"id\": 1,\n            \"name\": \"MWA\",\n            \"code\": \"CS-540\",\n            \"deleted\": false\n        }\n    ],\n    \"deleted\": false\n}"
+		},
+		{
+			"id": "4070ef5c-6ae5-b551-71ed-181bc496e7c6",
+			"headers": "Content-Type: application/json\nauthorization: Bearer jharna23\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer jharna23",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/v1/students/3",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "DELETE",
+			"collectionId": "cc9ce060-e722-d0ca-ebc6-4e80e5deed85",
+			"data": [],
+			"dataMode": "raw",
+			"name": "deleteStudent",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1658375382250,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"id\": 2,\n    \"firstName\": \"Jh\",\n    \"lastName\": \"Ka\",\n    \"email\": \"jharna@gmail.com\",\n    \"major\": \"compro\",\n    \"gpa\": 0,\n    \"coursesTaken\": [\n        {\n            \"id\": 1,\n            \"name\": \"MWA\",\n            \"code\": \"CS-540\",\n            \"deleted\": false\n        }\n    ],\n    \"deleted\": false\n}"
+		},
+		{
+			"id": "504ba9bf-59d9-1536-9da5-a3bfebe2de8c",
+			"headers": "Content-Type: application/json\nauthorization: Bearer jharna23\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer jharna23",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/v1/students/search?major=compro",
+			"queryParams": [
+				{
+					"key": "major",
+					"value": "compro",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "cc9ce060-e722-d0ca-ebc6-4e80e5deed85",
+			"data": [],
+			"dataMode": "raw",
+			"name": "searchStudentByMajor",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1658375650750,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"id\": 1,\n    \"firstName\": \"Jh\",\n    \"lastName\": \"Ka\",\n    \"email\": \"jharna@gmail.com\",\n    \"major\": \"compro\",\n    \"gpa\": 0,\n    \"coursesTaken\": [\n        {\n            \"id\": 1,\n            \"name\": \"MWA\",\n            \"code\": \"CS-540\",\n            \"deleted\": false\n        }\n    ],\n    \"deleted\": false\n}"
+		},
+		{
+			"id": "55c735ed-0d19-5b0c-d2b5-649ce0b6ad66",
+			"headers": "Content-Type: application/json\nauthorization: Bearer jharna23\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer jharna23",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/v1/students",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "cc9ce060-e722-d0ca-ebc6-4e80e5deed85",
+			"data": [],
+			"dataMode": "raw",
+			"name": "getAllStudents",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1658375211533,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"id\": 2,\n    \"firstName\": \"Jharnaa\",\n    \"lastName\": \"Karki\",\n    \"email\": \"jkarki@gmail.com\",\n    \"major\": \"compro\",\n    \"gpa\": 0,\n    \"coursesTaken\": [\n        {\n            \"id\": 1,\n            \"name\": \"WAA\",\n            \"code\": \"CS-543\",\n            \"deleted\": false\n        }\n    ],\n    \"deleted\": false\n}"
+		},
+		{
+			"id": "62149876-69b9-ccb6-415e-feb0139a1bf2",
+			"headers": "Content-Type: application/json\nauthorization: Bearer jharna23\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer jharna23",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/v1/students/1/courses",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "cc9ce060-e722-d0ca-ebc6-4e80e5deed85",
+			"data": [],
+			"dataMode": "raw",
+			"name": "getCoursesofIndividualStudent",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1658375593084,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"id\": 1,\n    \"firstName\": \"Jh\",\n    \"lastName\": \"Ka\",\n    \"email\": \"jharna@gmail.com\",\n    \"major\": \"compro\",\n    \"gpa\": 0,\n    \"coursesTaken\": [\n        {\n            \"id\": 1,\n            \"name\": \"MWA\",\n            \"code\": \"CS-540\",\n            \"deleted\": false\n        }\n    ],\n    \"deleted\": false\n}"
+		},
+		{
+			"id": "6d00afce-7e2d-3018-b524-9ea5263a67ba",
+			"headers": "Content-Type: application/json\nauthorization: Bearer jharna23\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer jharna23",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/v1/courses",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "cc9ce060-e722-d0ca-ebc6-4e80e5deed85",
+			"data": [],
+			"dataMode": "raw",
+			"name": "insertCourse",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1658376044101,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n        \"id\": 3,\n        \"name\": \"SWE\",\n        \"code\": \"CS-503\"\n    }\n\n"
+		},
+		{
+			"id": "6e834681-59be-2abf-07a0-9adb123e0427",
+			"headers": "Content-Type: application/json\nauthorization: Bearer jharna23\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer jharna23",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/v1/courses",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1658375133633,
+			"name": "getAllCourses",
+			"description": "",
+			"collectionId": "cc9ce060-e722-d0ca-ebc6-4e80e5deed85",
+			"responses": [],
+			"rawModeData": "{\n    \"id\": 2,\n    \"firstName\": \"Jharnaa\",\n    \"lastName\": \"Karki\",\n    \"email\": \"jkarki@gmail.com\",\n    \"major\": \"compro\",\n    \"gpa\": 0,\n    \"coursesTaken\": [\n        {\n            \"id\": 1,\n            \"name\": \"WAA\",\n            \"code\": \"CS-543\",\n            \"deleted\": false\n        }\n    ],\n    \"deleted\": false\n}"
+		},
+		{
+			"id": "9a6a2986-b508-e453-c9fc-e3f91eb3b4f4",
+			"headers": "Content-Type: application/json\nauthorization: Bearer jharna23\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer jharna23",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/v1/courses/2",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "cc9ce060-e722-d0ca-ebc6-4e80e5deed85",
+			"data": [],
+			"dataMode": "raw",
+			"name": "getAllCoursesById",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1658375163648,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"id\": 2,\n    \"firstName\": \"Jharnaa\",\n    \"lastName\": \"Karki\",\n    \"email\": \"jkarki@gmail.com\",\n    \"major\": \"compro\",\n    \"gpa\": 0,\n    \"coursesTaken\": [\n        {\n            \"id\": 1,\n            \"name\": \"WAA\",\n            \"code\": \"CS-543\",\n            \"deleted\": false\n        }\n    ],\n    \"deleted\": false\n}"
+		},
+		{
+			"id": "9f14c17a-706b-af92-3ca8-18e77ac8f4b4",
+			"headers": "Content-Type: application/json\nauthorization: Bearer jharna23\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer jharna23",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/v1/students",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "cc9ce060-e722-d0ca-ebc6-4e80e5deed85",
+			"data": [],
+			"dataMode": "raw",
+			"name": "InsertStudent",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1658375329133,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"id\": 2,\n    \"firstName\": \"Jh\",\n    \"lastName\": \"Ka\",\n    \"email\": \"jharna@gmail.com\",\n    \"major\": \"compro\",\n    \"gpa\": 0,\n    \"coursesTaken\": [\n        {\n            \"id\": 1,\n            \"name\": \"MWA\",\n            \"code\": \"CS-540\",\n            \"deleted\": false\n        }\n    ],\n    \"deleted\": false\n}"
+		},
+		{
+			"id": "e7514213-fb8a-5f0a-c456-69d3a5aaa0b0",
+			"headers": "Content-Type: application/json\nauthorization: Bearer jharna23\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer jharna23",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/v1/students/1",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "cc9ce060-e722-d0ca-ebc6-4e80e5deed85",
+			"data": [],
+			"dataMode": "raw",
+			"name": "getAllStudentsById",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1658375229281,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"id\": 2,\n    \"firstName\": \"Jharnaa\",\n    \"lastName\": \"Karki\",\n    \"email\": \"jkarki@gmail.com\",\n    \"major\": \"compro\",\n    \"gpa\": 0,\n    \"coursesTaken\": [\n        {\n            \"id\": 1,\n            \"name\": \"WAA\",\n            \"code\": \"CS-543\",\n            \"deleted\": false\n        }\n    ],\n    \"deleted\": false\n}"
+		},
+		{
+			"id": "ff478292-6deb-f4e7-df4f-d79721097107",
+			"headers": "Content-Type: application/json\nauthorization: Bearer jharna23\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "authorization",
+					"value": "Bearer jharna23",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/v1/courses",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "cc9ce060-e722-d0ca-ebc6-4e80e5deed85",
+			"data": [],
+			"dataMode": "raw",
+			"name": "getAllCourses",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1658375143532,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"id\": 2,\n    \"firstName\": \"Jharnaa\",\n    \"lastName\": \"Karki\",\n    \"email\": \"jkarki@gmail.com\",\n    \"major\": \"compro\",\n    \"gpa\": 0,\n    \"coursesTaken\": [\n        {\n            \"id\": 1,\n            \"name\": \"WAA\",\n            \"code\": \"CS-543\",\n            \"deleted\": false\n        }\n    ],\n    \"deleted\": false\n}"
+		}
+	]
+}

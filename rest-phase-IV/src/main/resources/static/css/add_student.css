@@ -1,0 +1,72 @@
+@font-face {
+    font-family: "OpenSans";
+    src: url('../fonts/OpenSans-Bold.ttf');
+    font-weight: 800;
+}
+@font-face { /*Regular*/
+    font-family: "OpenSans";
+    src: url('../fonts/OpenSans-Regular.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: "OpenSans";
+    src: url('../fonts/OpenSans-Light.ttf');
+    font-weight: 300;
+}
+
+html, body {
+    font-family: 'OpenSans', Roboto, monospace;
+    background-color: #eeeee4;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+.form {
+    width: 20%;
+    margin: auto;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    margin: 10px 0;
+}
+
+.form-content {
+    width: 50%;
+}
+
+.form-footer {
+    width: 100%;
+    text-align: center;
+}
+
+#submitBtn {  
+    margin: 5px 0;
+    width: 50%;
+}
+
+#submitBtn:hover {
+    background: linear-gradient(rgb(85, 155, 240), rgb(32, 115, 216));
+    border-width: 1px;
+    color: white;
+}
+
+#submitBtn:active {
+    background: rgb(32, 115, 216);
+    color: white;
+}
+
+#errorMsg {
+    color: red;
+    text-align: center;
+}

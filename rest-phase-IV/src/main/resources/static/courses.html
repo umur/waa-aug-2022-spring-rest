@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+    <script src="js/courses.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="course">
+            <h4>Courses</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Code</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="course-list">
+                </tbody>
+            </table>
+            <div>
+                <button id="addCourseBtn">Add new course</button>
+            </div>
+        </div>
+        <div class="student-course">
+            <h4 id="studentCourseTitle">Courses for student</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Code</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="student-course-list">
+                </tbody>
+            </table>
+            <div>
+                <button id="doneBtn">Done</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

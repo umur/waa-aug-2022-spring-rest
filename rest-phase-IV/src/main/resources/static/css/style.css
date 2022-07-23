@@ -1,0 +1,71 @@
+@font-face {
+    font-family: "OpenSans";
+    src: url('../fonts/OpenSans-Bold.ttf');
+    font-weight: 800;
+}
+@font-face { /*Regular*/
+    font-family: "OpenSans";
+    src: url('../fonts/OpenSans-Regular.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: "OpenSans";
+    src: url('../fonts/OpenSans-Light.ttf');
+    font-weight: 300;
+}
+
+html, body {
+    font-family: 'OpenSans', Roboto, monospace;
+    background-color: #eeeee4;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    text-align: center;
+}
+
+table {
+    table-layout: fixed;
+    width: 80%;
+    margin: auto;
+    border-spacing: 0;
+    background-color: white;
+    border: solid 1px gainsboro;
+}
+
+tbody, thead, tr, th, td {
+    border: solid 1px gainsboro;
+    word-break: break-all;
+}
+
+.action-img {
+    width: 24px;
+    margin: 5px;
+}
+
+#addStudentBtn {
+    position: absolute;
+    right: 10%;
+    width: 20%;
+    display: inline-block;
+    padding: 0.4em 1em;
+    font-size: 14px;
+    color: white;
+    background-color: rgb(32, 115, 216);
+    border-radius: 4px;
+    border: solid 1px gainsboro;
+    margin-top: 20px;
+    
+}
+
+#addStudentBtn:hover {
+    background: linear-gradient(rgb(85, 155, 240), rgb(32, 115, 216));
+    border-width: 1px;
+}
+
+#addStudentBtn:active {
+    background: rgb(32, 115, 216);
+}
+

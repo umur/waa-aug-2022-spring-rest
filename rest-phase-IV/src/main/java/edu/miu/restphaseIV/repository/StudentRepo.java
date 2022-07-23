@@ -31,11 +31,13 @@ public class StudentRepo {
         students.add(student);
     }
 
-    public void save(Student student) {
+    public Student save(Student student) {
         Boolean notExists = students.stream().noneMatch(s -> s.getId() == student.getId());
         if(notExists) {
             students.add(student);
+            return student;
         }
+        return null;
     }
 
     public void update(Student student) {
@@ -45,11 +47,12 @@ public class StudentRepo {
         }
     }
 
-    public void delete(int id) {
+    public Student delete(int id) {
         Student student = getById(id);
         if(student != null){
             students.remove(student);
         }
+        return student;
     }
 
     public Student getById(int id) {
@@ -62,6 +65,33 @@ public class StudentRepo {
 
     public List<Course> getCoursesByStudentId(int studentId) {
         return this.getById(studentId).getCoursesTaken();
+    }
+
+    public List<Course> deleteCourseFromStudent(int id, int courseId) {
+        var student = getById(id);
+        List<Course> courses = null;
+        if(student != null) {
+            courses = student.getCoursesTaken();
+            var course = courses.stream().filter(c -> c.getId() == courseId).findFirst().orElse(null);
+            if(course != null) {
+                courses.remove(course);
+                student.setCoursesTaken(courses);
+            }
+        }
+        return courses;
+    }
+
+    public List<Course> addCourseToStudent(int id, Course course) {
+        var student = getById(id);
+        List<Course> courses = null;
+        if(student != null) {
+            courses = student.getCoursesTaken();
+            if(courses.stream().filter(c -> c == course).findFirst().orElse(null) == null) {
+                courses.add(course);
+                student.setCoursesTaken(courses);
+            }
+        }
+        return courses;
     }
 
     public List<Student> getStudentsByMajor(String major) {return students.stream().filter(s -> s.getMajor().equals(major)).collect(Collectors.toList());}

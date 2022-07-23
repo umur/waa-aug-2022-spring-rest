@@ -33,11 +33,13 @@ public class CourseRepo {
         courses.add(course);
     }
 
-    public void save(Course course) {
+    public Course save(Course course) {
         Boolean notExists = courses.stream().noneMatch(c -> c.getId() == course.getId());
         if(notExists) {
             courses.add(course);
+            return course;
         }
+        return null;
     }
 
     public void update(Course course) {
@@ -47,11 +49,12 @@ public class CourseRepo {
         }
     }
 
-    public void delete(int id) {
+    public Course delete(int id) {
         Course course = getById(id);
         if(course != null){
             courses.remove(course);
         }
+        return course;
     }
 
     public Course getById(int id) {

@@ -1,7 +1,9 @@
 package edu.miu.restphaseIV.service.impl;
 
 import edu.miu.restphaseIV.dto.CourseDto;
+import edu.miu.restphaseIV.dto.StudentDto;
 import edu.miu.restphaseIV.entity.Course;
+import edu.miu.restphaseIV.entity.Student;
 import edu.miu.restphaseIV.repository.CourseRepo;
 import edu.miu.restphaseIV.service.CourseService;
 import lombok.RequiredArgsConstructor;
@@ -19,8 +21,9 @@ public class CourseServiceImpl implements CourseService {
     private final ModelMapper modelMapper;
 
     @Override
-    public void save(CourseDto courseDto) {
-        courseRepo.save(modelMapper.map(courseDto, Course.class));
+    public CourseDto save(CourseDto courseDto) {
+        Course createdCourse = courseRepo.save(modelMapper.map(courseDto, Course.class));
+        return createdCourse != null ? modelMapper.map(createdCourse, CourseDto.class) : null;
     }
 
     @Override
@@ -29,8 +32,9 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public void delete(int id) {
-        courseRepo.delete(id);
+    public CourseDto delete(int id) {
+        Course deletedCourse = courseRepo.delete(id);
+        return (deletedCourse != null) ? modelMapper.map(deletedCourse, CourseDto.class) : null;
     }
 
     @Override

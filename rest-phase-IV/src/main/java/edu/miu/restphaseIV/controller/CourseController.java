@@ -2,6 +2,7 @@ package edu.miu.restphaseIV.controller;
 
 import edu.miu.restphaseIV.dto.CourseDto;
 import edu.miu.restphaseIV.service.CourseService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/courses")
+@CrossOrigin("*")
 public class CourseController {
     private final CourseService courseService;
 
@@ -17,8 +19,10 @@ public class CourseController {
     }
 
     @PostMapping
-    public void save(@RequestBody CourseDto courseDto) {
-        courseService.save(courseDto);
+    public ResponseEntity<CourseDto> save(@RequestBody CourseDto courseDto) {
+        CourseDto createdCourse = courseService.save(courseDto);
+        var res = createdCourse != null ? ResponseEntity.ok(createdCourse) : new ResponseEntity(null, HttpStatus.NOT_IMPLEMENTED);
+        return res;
     }
 
     @GetMapping
@@ -33,8 +37,8 @@ public class CourseController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable int id) {
-        courseService.delete(id);
+    public ResponseEntity<CourseDto> delete(@PathVariable int id) {
+        return ResponseEntity.ok(courseService.delete(id));
     }
 
     @PutMapping("/{id}")

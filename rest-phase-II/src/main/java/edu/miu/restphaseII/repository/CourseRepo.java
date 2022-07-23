@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 @Repository
 public class CourseRepo {
-    private static List<Course> courses = new ArrayList<>();
+    private static List<Course> courses;
 
     static {
         courses = new ArrayList<>();
